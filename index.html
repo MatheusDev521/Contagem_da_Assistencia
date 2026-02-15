@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Assistência</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>CONTAGEM DA ASSISTÊNCIA</h1>
+    <div id="presencial">
+        <h2>ASSISTÊNCIA PRESENCIAL</h2>
+        <p>Nº TOTAL</p>
+        <input type="number" placeholder="Nº Total da Assistência Presencial..." id="presencialInput">
+    </div>
+<div id="Zoom">
+    <h2>ASSISTÊNCIA DO ZOOM</h2>
+    <p>VOTAÇÃO DA ENQUETE</p>
+    <p id="info">Preencha de acordo com a quantidade informada na votação da enquete no Zoom</p>
+    <div id="ZoomForm">
+        <form action="#">
+            <div class="campo">
+                <label for="1p">1 Pessoa:</label>
+                <input type="number" id="1p" min="0">
+            </div>
+
+            <div class="campo">
+                <label for="2p">2 Pessoas:</label>
+                <input type="number" id="2p" min="0">
+            </div>
+
+            <div class="campo">
+                <label for="3p">3 Pessoas:</label>
+                <input type="number" id="3p" min="0">
+            </div>
+
+            <div class="campo">
+                <label for="4p">4 Pessoas:</label>
+                <input type="number" id="4p" min="0">
+            </div>
+
+            <div class="campo">
+                <label for="5p">5 Pessoas:</label>
+                <input type="number" id="5p" min="0">
+            </div>
+
+            <div class="campo">
+                <label for="6p">6 Pessoas:</label>
+                <input type="number" id="6p" min="0">
+            </div>
+
+            <div class="campo">
+                <label for="7p">7 Pessoas:</label>
+                <input type="number" id="7p" min="0">
+            </div>
+
+            <div class="campo">
+                <label for="8p">8 Pessoas:</label>
+                <input type="number" id="8p" min="0">
+            </div>
+
+            <div class="campo">
+                <label for="9p">9 Pessoas:</label>
+                <input type="number" id="9p" min="0">
+            </div>
+
+            <div class="campo">
+                <label for="10p">10 Pessoas:</label>
+                <input type="number" id="10p" min="0">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="containerData">
+    <h2>DATA DA REUNIÃO</h2>
+    <input type="date" id="dataInput"><button id="buttonHoje">HOJE</button>
+</div>
+
+    <div id="botoes">
+        <button id="calcular">CALCULAR</button>
+        <button id="limpar">LIMPAR TUDO</button>
+    </div>
+    <br>
+    <div id="resultado">
+        <h2>RESULTADO</h2>
+        <div id="ResultadosFinais">
+            <h3 id="TotalPresencial"></h3>
+            <h3 id="TotalZoom"></h3>
+            <h3 id="TotalGeral"></h3>
+        </div>
+    </div>
+<div id="compartilhar">
+    <h2>COMPARTILHAR RESULTADOS</h2>
+    <div id="buttonsShare">
+        <a href="#" id="whatsapp-share-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/598px-WhatsApp_icon.png?20200503174721" alt="WhatsApp logo: green circular background with white phone handset icon, used to share meeting attendance results via WhatsApp messaging"></a>
+        <a href="#" id="generic-share-btn"><img src="https://cdn-icons-png.flaticon.com/512/189/189676.png" alt="compartilhar"></a>
+    </div>
+</div>
+
+    <footer>&copy; Aplicativo Web Desenvolvido na Congregação Cajazeiras 5</footer>
+</body>
+</html>

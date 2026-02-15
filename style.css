@@ -1,0 +1,293 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===== CORES (Paleta Dark estilo ChatGPT) ===== */
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #111827;
+    --border-color: #2d3748;
+    --text-primary: #e5e7eb;
+    --text-secondary: #94a3b8;
+    --accent: #10a37f;
+    --accent-hover: #0e8f6f;
+}
+
+/* ===== BODY ===== */
+body {
+    background: linear-gradient(145deg, #0f172a, #111827);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== TÍTULOS ===== */
+h1 {
+    margin-bottom: 30px;
+    font-size: clamp(2rem, 3vw, 2.2rem);
+    text-align: center;
+    color: #34d399;
+   }
+
+
+h2 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+#info {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+    padding: 9px;
+    border: solid 1px var(--border-color);
+}
+
+/* ===== CARDS ===== */
+#containerData,
+#presencial,
+#resultado,
+#Zoom,
+#compartilhar {
+    text-align: center;
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+#ZoomForm form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+@media (max-width: 600px) {
+    #ZoomForm form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== INPUTS ===== */
+input {
+    width: clamp(80px, 90%, 300px);
+    align-self: center;
+    text-align: center;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+}
+
+input[type="date"] {
+    padding: 8px 10px;
+    width: 60%;
+    margin-right: 0.8rem;
+}
+
+#buttonHoje {
+    padding: 9px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#buttonHoje:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 163, 127, 0.4);
+
+}
+
+input::placeholder {
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    input::placeholder {
+        font-size: calc(1rem * 0.9);
+    }
+}
+
+
+form input {
+    width: clamp(80px, 80%, 180px);
+    align-self: center;
+    text-align: center;
+    text-align: center;
+    margin: 5px 0 15px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: 0.2s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(16, 163, 127, 0.3);
+}
+
+/* ===== FORM ZOOM GRID ===== */
+#Zoom form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 2px;
+    align-items: center;
+}
+
+#botoes {
+    display: flex;
+    justify-content: center;
+    gap: 1.3rem;
+    margin-top: 5px;
+}
+
+#calcular {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#calcular:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 163, 127, 0.4);
+}
+
+#limpar {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    background-color: #dc2626; /* vermelho moderno */
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#limpar:hover {
+    background-color: #b91c1c; /* vermelho mais profundo */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+
+/* ===== RESULTADO ===== */
+#resultado {
+    border-left: 4px solid var(--accent);
+}
+
+#ResultadosFinais {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0 2.8rem;
+    gap: 4px;
+}
+
+@media (max-width: 600px) {
+    #ResultadosFinais {
+        padding: 0 1.1rem;
+    }
+}
+
+#TotalZoom,
+#TotalPresencial {
+    font-size: 1.1rem;
+}
+
+#TotalGeral{
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-top: 15px;
+}
+
+/* ===== BOTÕES DE COMPARTILHAR ===== */
+#buttonsShare {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+#buttonsShare img {
+    width: 45px;
+    height: 45px;
+    transition: 0.3s ease;
+    filter: brightness(0.9);
+}
+
+#buttonsShare img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: auto;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
