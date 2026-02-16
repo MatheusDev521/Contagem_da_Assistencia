@@ -272,8 +272,8 @@ form input:focus {
 }
 
 #buttonsShare img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     border: solid 1px var(--border-color);
     border-radius: 8px;
