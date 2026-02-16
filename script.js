@@ -58,17 +58,17 @@ calcularButton.addEventListener("click", function() {
 });
 
 limparButton.addEventListener("click", function() {
-    presencialInput.value = "";
-    inputsZoom.forEach(input => input.value = "");
-    document.getElementById("dataInput").value = "";
-    totalPresencialElement.textContent = ``;
-    totalZoomElement.textContent = ``;
-    totalGeralElement.textContent = ``;
-    
-    // Limpar as variáveis
-    totalPresencial = 0;
-    totalZoom = 0;
-    totalGeral = 0;
+    if (confirm("Tem certeza que deseja limpar todos os dados?")) {
+        presencialInput.value = "";
+        inputsZoom.forEach(input => input.value = "");
+        document.getElementById("dataInput").value = "";
+        totalPresencialElement.textContent = ``;
+        totalZoomElement.textContent = ``;
+        totalGeralElement.textContent = ``;    
+        totalPresencial = 0;
+        totalZoom = 0;
+        totalGeral = 0;
+    }
 });
 
 // Função para compartilhar no WhatsApp
