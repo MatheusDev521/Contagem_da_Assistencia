@@ -248,40 +248,64 @@ form input:focus {
     transform: scale(0.98);
 }
 
+/* ===== MODAL - Correções Mobile ===== */
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.6);
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 1000;          /* garante que fique acima de tudo */
+    padding: 16px;          /* evita encostar nas bordas em telas pequenas */
+}
+
+.modal.active {
+    display: flex;          /* use uma classe .active para abrir o modal via JS */
 }
 
 .modal-content {
     background: #1e1e1e;
-    padding: 30px;
+    padding: 24px 20px;
     border-radius: 12px;
     text-align: center;
+    width: 100%;            /* ocupa o espaço disponível... */
+    max-width: 360px;       /* ...mas nunca passa de 360px */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Sobrescreve o p global dentro do modal */
+.modal-content p {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0;
+    line-height: 1.5;
 }
 
 .modal-buttons {
     margin-top: 18px;
     display: flex;
-    gap: 14px;
+    gap: 12px;
     justify-content: center;
+    flex-wrap: wrap;        /* botões quebram linha se necessário */
 }
 
+/* Área de toque confortável para mobile */
 .modal button {
-    padding: 6px 14px;
+    padding: 10px 20px;
+    min-width: 100px;
+    min-height: 44px;       /* padrão de acessibilidade para toque */
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.modal .confirm {
-    background-color: var(--accent);
-    color: #fff;
-    transition: background-color 0.2s ease;
+.modal button:active {
+    transform: scale(0.97);
 }
 
 #confirmYes {

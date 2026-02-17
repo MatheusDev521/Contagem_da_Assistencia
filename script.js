@@ -62,7 +62,7 @@ const confirmYes = document.getElementById("confirmYes");
 const confirmNo = document.getElementById("confirmNo");
 
 limparButton.addEventListener("click", function () {
-    modal.style.display = "flex";
+    modal.classList.add("active");        // era: modal.style.display = "flex"
 });
 
 confirmYes.addEventListener("click", function () {
@@ -76,11 +76,11 @@ confirmYes.addEventListener("click", function () {
     totalZoom = 0;
     totalGeral = 0;
 
-    modal.style.display = "none";
+    modal.classList.remove("active");
 });
 
 confirmNo.addEventListener("click", function () {
-    modal.style.display = "none";
+    modal.classList.remove("active");
 });
 
 // Função para compartilhar no WhatsApp
