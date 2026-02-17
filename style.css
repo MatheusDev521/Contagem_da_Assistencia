@@ -131,16 +131,19 @@ input[type="date"] {
     color: #fff;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-    cursor: pointer;
     transition: all 0.2s ease;
 }
 
-#buttonHoje:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(16, 163, 127, 0.4);
+@media (hover: hover) and (pointer: fine) {
+    #buttonHoje:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(16, 163, 127, 0.4);
+    }
+}
 
+#buttonHoje:active {
+    transform: scale(0.98);
 }
 
 input::placeholder {
@@ -154,7 +157,6 @@ input::placeholder {
         font-size: calc(1rem * 0.9);
     }
 }
-
 
 form input {
     width: clamp(80px, 80%, 180px);
@@ -206,12 +208,6 @@ form input:focus {
     transition: all 0.2s ease;
 }
 
-#calcular:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(16, 163, 127, 0.4);
-}
-
 #limpar {
     grid-column: 1 / -1;
     justify-self: center;
@@ -226,12 +222,85 @@ form input:focus {
     transition: all 0.2s ease;
 }
 
-#limpar:hover {
-    background-color: #b91c1c; /* vermelho mais profundo */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+@media (hover: hover) and (pointer: fine) {
+
+    #buttonHoje:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(16, 163, 127, 0.4);
+    }
+
+    #calcular:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(16, 163, 127, 0.4);
+    }
+
+    #limpar:hover {
+        background-color: #b91c1c;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+    }
 }
 
+#calcular:active,
+#limpar:active {
+    transform: scale(0.98);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.modal-buttons {
+    margin-top: 18px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+.modal button {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal .confirm {
+    background-color: var(--accent);
+    color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+#confirmYes {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+#confirmYes:hover {
+    background-color: var(--accent-hover);
+}
+
+#confirmNo {
+    background-color: #dc2626;
+    color: #fff;
+}
+
+#confirmNo:hover {
+    background-color: #b91c1c;
+}
 
 /* ===== RESULTADO ===== */
 #resultado {
@@ -264,6 +333,10 @@ form input:focus {
 }
 
 /* ===== BOTÕES DE COMPARTILHAR ===== */
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
 #buttonsShare {
     display: flex;
     justify-content: center;

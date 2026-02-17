@@ -57,18 +57,30 @@ calcularButton.addEventListener("click", function() {
     totalGeralElement.textContent = `Total: ${totalGeral} pessoas`;
 });
 
-limparButton.addEventListener("click", function() {
-    if (confirm("Tem certeza que deseja limpar todos os dados?")) {
-        presencialInput.value = "";
-        inputsZoom.forEach(input => input.value = "");
-        document.getElementById("dataInput").value = "";
-        totalPresencialElement.textContent = ``;
-        totalZoomElement.textContent = ``;
-        totalGeralElement.textContent = ``;    
-        totalPresencial = 0;
-        totalZoom = 0;
-        totalGeral = 0;
-    }
+const modal = document.getElementById("confirmModal");
+const confirmYes = document.getElementById("confirmYes");
+const confirmNo = document.getElementById("confirmNo");
+
+limparButton.addEventListener("click", function () {
+    modal.style.display = "flex";
+});
+
+confirmYes.addEventListener("click", function () {
+    presencialInput.value = "";
+    inputsZoom.forEach(input => input.value = "");
+    document.getElementById("dataInput").value = "";
+    totalPresencialElement.textContent = ``;
+    totalZoomElement.textContent = ``;
+    totalGeralElement.textContent = ``;
+    totalPresencial = 0;
+    totalZoom = 0;
+    totalGeral = 0;
+
+    modal.style.display = "none";
+});
+
+confirmNo.addEventListener("click", function () {
+    modal.style.display = "none";
 });
 
 // Função para compartilhar no WhatsApp

@@ -75,7 +75,10 @@
 
 <div id="containerData">
     <h2>DATA DA REUNIÃO</h2>
-    <input type="date" id="dataInput"><button id="buttonHoje">HOJE</button>
+    <div id="dataContainer">
+        <input type="date" id="dataInput">
+        <button id="buttonHoje">HOJE</button>
+    </div>
 </div>
 
     <div id="botoes">
@@ -98,6 +101,17 @@
         <a href="#" id="generic-share-btn"><img src="https://cdn-icons-png.flaticon.com/512/189/189676.png" alt="compartilhar"></a>
     </div>
 </div>
+
+<div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <p>Tem certeza que deseja limpar todos os dados?</p>
+    <div class="modal-buttons">
+      <button id="confirmYes">Sim</button>
+      <button id="confirmNo">Cancelar</button>
+    </div>
+  </div>
+</div>
+
 
     <footer>Copyright &copy; 2026 Aplicativo Web Desenvolvido na Congregação Cajazeiras 5</footer>
 </body>
