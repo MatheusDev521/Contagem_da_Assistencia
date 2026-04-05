@@ -1,5 +1,4 @@
 let presencialInput = document.getElementById("presencialInput");
-let buttonHoje = document.getElementById("buttonHoje");
 let calcularButton = document.getElementById("calcular");
 let limparButton = document.getElementById("limpar");
 
@@ -32,7 +31,7 @@ function informarDiaMes(dataNumerica) {
     return `${diaDaSemana}, ${dia} de ${mesDoAno} de ${ano}`;
 }
 
-buttonHoje.addEventListener("click", function() {
+window.addEventListener("DOMContentLoaded", function() {
     let today = new Date();
     let day = String(today.getDate()).padStart(2, '0');
     let month = String(today.getMonth() + 1).padStart(2, '0');
@@ -62,7 +61,7 @@ const confirmYes = document.getElementById("confirmYes");
 const confirmNo = document.getElementById("confirmNo");
 
 limparButton.addEventListener("click", function () {
-    modal.classList.add("active");        // era: modal.style.display = "flex"
+    modal.classList.add("active");
 });
 
 confirmYes.addEventListener("click", function () {
@@ -104,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mensagem += `${dataFormatada}\n\n`;
         mensagem += `Presencial: ${totalPresencial}\n`;
         mensagem += `Zoom: ${totalZoom}\n\n`;
-        mensagem += `*Total: ${totalGeral} pessoas*`;
+        mensagem += `*TOTAL: ${totalGeral} pessoas*`;
         
         let mensagemCodificada = encodeURIComponent(mensagem);
         let whatsappUrl = `https://wa.me/?text=${mensagemCodificada}`;
